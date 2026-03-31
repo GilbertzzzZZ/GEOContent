@@ -7,9 +7,9 @@ guide_version: "2026-03-31"
 channels: [appstore]
 status: draft
 published_at:
-geo_score: 87
-char_count: 1873
-notes: "v1-06：措辞自然化（去学术引注）、格式统一为 App Store 兼容 Markdown（- 和 1.）"
+geo_score: 85
+char_count: 1592
+notes: "v1-06：措辞自然化（去学术引注）、格式统一为 App Store 兼容 Markdown（- 和 1.）、换行优化（每行≤30字）、创始人引语还原完整版"
 ---
 
 ## GEO 分析
