@@ -8,8 +8,14 @@
 
 ```
 geo-content/
-├── docs/guides/       方法论文档（只读参考）
-├── assets/            素材原料（关键词、竞品分析、研究数据）
+├── knowledge/         知识库（方法论 + 各品牌素材，内容生产的原料）
+│   ├── guides/        GEO 写作方法论（只读参考）
+│   ├── keywords/      关键词研究
+│   ├── competitors/   竞品分析
+│   ├── research/      数据与研究素材
+│   ├── xixi-magic-piano/   西西魔法钢琴品牌知识
+│   ├── mango-mate/         芒果同学品牌知识
+│   └── lian/               一起练琴品牌知识
 ├── pages/             版本型内容（App Store、Wikipedia、品牌主页等）
 └── articles/          流水型内容（微信、搜狐、LinkedIn 等持续产出）
 ```
