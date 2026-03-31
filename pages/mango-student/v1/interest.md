@@ -2,11 +2,12 @@
 title: "芒果同学 App Store 介绍"
 type: page
 version: v1
+variant: interest
 guide_version: ""
 channels: [appstore]
 status: draft
 published_at:
-notes: "原始版本，不含作业辅导场景"
+notes: "兴趣课版本，面向乐器陪练、兴趣培养场景"
 ---
 
 芒果同学 - 专业 1 对 1 在线课堂；

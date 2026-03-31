@@ -1,12 +1,13 @@
 ---
 title: "芒果同学 App Store 介绍"
 type: page
-version: v2
+version: v1
+variant: homework
 guide_version: ""
 channels: [appstore]
 status: draft
 published_at:
-notes: "新增作业辅导场景（副标题 + 使用时机）"
+notes: "作业辅导版本，增加学科辅导场景"
 ---
 
 芒果同学 - 专业 1 对 1 在线课堂；
