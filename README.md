@@ -20,46 +20,87 @@ geo-content/
 
 ### pages — 版本型
 
-适用于内容相对稳定、方法论更新时整体迭代的场景。
+适用于内容相对稳定、方法论或竞品变化时整体迭代的场景。
 
-- 命名规范：`{topic}/v{N}.md`，如 `appstore-description/v2.md`
-- 触发更新：guides 方法论升级、竞品变化、平台规则变化
+**命名规范：** `{channel}-{version}-{variant}.md`
+
+| 部分 | 说明 | 示例 |
+|------|------|------|
+| `channel` | 目标平台 | `appstore`, `wikipedia` |
+| `version` | 版本号 | `v1`, `v2` |
+| `variant` | 可选，同版本内的差异化变体 | `interest`, `homework` |
+
+示例：
+```
+pages/
+├── mango-mate/
+│   ├── appstore-v1-interest.md    ← 兴趣课版本
+│   └── appstore-v1-homework.md    ← 作业辅导版本
+├── lian/
+│   └── appstore-v1.md
+└── xixi-magic-piano/
+    └── appstore-v1.md
+```
 
 ### articles — 流水型
 
 适用于持续高频产出的内容平台。
 
-- 命名规范：`YYYY-MM-DD-{slug}.md`，如 `2026-04-01-why-brand-missing-ai.md`
+**命名规范：** `YYYY-MM-DD-{slug}.md`
+
+示例：
+```
+articles/
+├── 2026-04-01-why-brand-missing-ai.md
+└── 2026-04-02-geo-vs-seo-difference.md
+```
 
 ---
 
 ## Frontmatter 规范
 
-**stream 文章：**
-```yaml
----
-title: "文章标题"
-type: article
-guide_version: "2026-03-23"   # 生产时参考的 guides 版本（文档最后修改日期）
-channels: [wechat, sohu]       # 目标发布渠道，可多个
-status: draft                  # draft | published
-published_at:                  # 发布后填写，格式 YYYY-MM-DD
----
-```
-
-**versioned 文章：**
+**pages 文章：**
 ```yaml
 ---
 title: "文章标题"
 type: page
-version: v2
-guide_version: "2026-03-23"
-channels: [appstore-cn, appstore-us]
-status: draft
-published_at:
-notes: "与上版的主要差异说明"
+version: v1
+variant: interest          # 可选，同版本内的变体标识
+guide_version: "2026-03-23"   # 生产时参考的 guides 版本（文档最后修改日期）
+channels: [appstore]           # 目标发布渠道，可多个
+status: draft                  # draft | published
+published_at:                  # 发布后填写，格式 YYYY-MM-DD
+notes: "版本说明"
 ---
 ```
+
+**articles 文章：**
+```yaml
+---
+title: "文章标题"
+type: article
+guide_version: "2026-03-23"
+channels: [wechat, sohu]
+status: draft
+published_at:
+---
+```
+
+---
+
+## 字段说明
+
+| 字段 | 必填 | 说明 |
+|------|------|------|
+| title | ✅ | 文章标题 |
+| type | ✅ | `page` 或 `article` |
+| guide_version | ✅ | 生产时参考的 guides 版本（日期格式） |
+| channels | ✅ | 目标发布渠道，数组，可多个 |
+| status | ✅ | `draft` / `published` |
+| published_at | 发布后必填 | 实际发布日期 |
+| version | pages 必填 | 版本号，如 v1, v2 |
+| variant | 可选 | 同版本内的差异化变体，如 interest, homework |
+| notes | 可选 | 版本差异说明、生产背景 |
 
 ---
 
@@ -78,4 +119,4 @@ notes: "与上版的主要差异说明"
 | `geo-action-plan-90d.md` | 30-60-90 天行动计划 |
 
 > `guide_version` 字段记录内容生产时使用的方法论版本。guides 更新后，
-> 可通过 `grep guide_version articles/*.md pages/**/*.md` 批量识别旧版内容。
+> 可通过 `grep -r "guide_version" pages/ articles/` 批量识别旧版内容。
