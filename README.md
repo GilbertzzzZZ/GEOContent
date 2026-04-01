@@ -31,23 +31,7 @@ knowledge/{brand}/
 └── keywords-and-topics.md  关键词 + FAQ 话题 + 品牌定位词
 ```
 
-### 内容优先级规则
-
-所有内容条目标注 P0 / P1：
-
-- **P0**：字数受限时必须保留，是文案的骨架
-- **P1**：字数充足时包含，是文案的血肉
-
-字数不够时，按 P0 → P1 顺序取舍，不得静默丢弃 P0 内容。
-
-### 内容迭代规则
-
-一篇文案 60-80% 来自 `fixed-content.md`（已验证内容），20-40% 来自 `candidate-content.md`（本次测试内容）。
-
-- 每次迭代新写的内容 → 先进 `candidate-content.md`
-- 被 AI 引用 / Gilbert 确认高价值 → 升入 `fixed-content.md`
-- 多次迭代未使用或效果差 → 从 `candidate-content.md` 删除
-- **P0 内容只能由 Gilbert 决策降级或移除**
+内容迭代规则、P0/P1 优先级定义见 `knowledge/guides/appstore-guide.md`。
 
 ---
 
