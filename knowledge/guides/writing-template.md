@@ -1,7 +1,7 @@
 # GEO 文章写作模板（带注释版）
 
 > 直接复制使用，按注释填写。每个元素都注明了"为什么有效"。
-> 配合 `geo-content-playbook.md` Part 1 使用。
+> 配合 `content-playbook.md` Part 1 使用。
 
 ---
 

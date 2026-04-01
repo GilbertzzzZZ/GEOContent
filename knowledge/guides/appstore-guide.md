@@ -24,8 +24,8 @@ AI 系统对其内容的可信度评分高。
 App Store 介绍不是每次从零写，是在固定底座上局部迭代。
 
 **内容构成比例：**
-- 60-80%：来自品牌知识库 `fixed-content.md` 的锁定内容（已验证高价值）
-- 20-40%：来自 `candidate-content.md` 的候选内容（本次测试）
+- 60-80%：来自品牌知识库 `knowledge/{brand}/fixed-content.md` 的锁定内容（已验证高价值）
+- 20-40%：来自 `knowledge/{brand}/candidate-content.md` 的候选内容（本次测试）
 
 **内容优先级（P0 / P1）：**
 
@@ -37,8 +37,8 @@ App Store 介绍不是每次从零写，是在固定底座上局部迭代。
 P0 内容不得在迭代中静默丢失，只能由 Gilbert 主动决策降级或移除。
 
 **迭代沉淀规则：**
-- 每次迭代新写的内容 → 先进 `candidate-content.md`
-- 被 AI 引用 / Gilbert 确认高价值 → 升入 `fixed-content.md`
+- 每次迭代新写的内容 → 先进 `knowledge/{brand}/candidate-content.md`
+- 被 AI 引用 / Gilbert 确认高价值 → 升入 `knowledge/{brand}/fixed-content.md`
 - 多次迭代未使用或效果差 → 从 `candidate-content.md` 删除
 
 ---
@@ -229,39 +229,23 @@ FAQ 是 AI 在回答特定问题时最容易直接引用的区块。
 
 ---
 
-## GEO 评分标准（统一满分 92 分）
+## GEO 评分
 
-图片语义化（P1，5分）在 App Store 纯文本介绍中无法实现，
-记为结构性扣分（固定 -5），不影响其他项满分。
-**App Store 文本版最高可得 87/92，视为该场景满分。**
+评分使用唯一标准：`optimization-checklist.md`（满分 92 分）。
 
-| 类别 | 项目 | 满分 | 备注 |
-|------|------|------|------|
-| P0 | 引言定义性直答（含年龄+数字+价格）| 10 | |
-| P0 | 统计数据 ≥ 3 个 | 10 | |
-| P0 | 数据来源标注 | 10 | 来源自然融入句子 |
-| P0 | 标题区块清晰（【】符号）| 10 | |
-| P0 | 列表化关键信息（- 列表）| 10 | 用 - 不用 • |
-| P0 | 具名作者/团队背景 | 10 | |
-| P1 | FAQ 覆盖（≥5条真实搜索场景）| 5 | |
-| P1 | 品牌定位词一致出现 3+ 次 | 5 | |
-| P1 | 社会证明（用户数/评测/排名）| 5 | |
-| P1 | 图片语义化 | 0 | App Store 文本不适用，固定 -5 |
-| P2 | 竞品定位对比（描述性，不点名）| 3 | |
-| P2 | 创始人/专家直接引语 | 3 | |
-| P2 | 多角色场景覆盖（使用/不使用）| 3 | |
-| P2 | 原创数据（内部测试/用户数据）| 3 | |
-| **总分** | | **87/92** | App Store 文本场景上限 |
+**App Store 场景的 delta（与通用 checklist 的差异）：**
+- 图片语义化（P1，5分）：App Store 纯文本介绍中无法实现，固定 -5 分，不影响其他项
+- **App Store 文本版最高可得 87/92，视为该场景满分**
+- 标题区块清晰：使用 `##` Markdown 标题（Markdown 版）或 `【】` 全角符号（Fallback 版），均满足 P0 要求
+- 数据来源标注：来源自然融入句子，不使用学术引注格式
+
+其余项目定义与 `optimization-checklist.md` 完全一致，不重复定义。
 
 ---
 
 ## 与其他 guides 的关系
 
-| Guide | 适用场景 |
-|-------|---------|
-| `geo-content-playbook.md` | 博客文章、长内容，有 HTML/Schema 控制权 |
-| `geo-seo-rewrite-guide.md` | SEO 存量文章改造，有页面结构控制权 |
-| `geo-writing-template.md` | 从零写 GEO 文章，有完整页面控制权 |
-| **`geo-appstore-guide.md`（本文）** | **App Store 介绍框，4000字符限制，纯文本** |
-| `geo-optimization-checklist.md` | 通用发布前检查（不含 App Store 专项）|
-| `geo-platform-comparison.md` | 理解各 AI 平台引用偏好差异 |
+- `content-playbook.md` — 博客文章、长内容，有 HTML/Schema 控制权
+- `writing-template.md` — 从零写 GEO 文章，有完整页面控制权
+- `optimization-checklist.md` — **唯一评分标准**，发布前逐项核对
+- `platform-comparison.md` — 理解各 AI 平台引用偏好差异
