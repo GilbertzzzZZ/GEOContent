@@ -36,7 +36,7 @@ guides/
 - 网页/博客 → `writing-template.md`
 - App Store → `appstore-guide.md`
 
-**内容发布前** → `optimization-checklist.md`（逐项核对，≥60 分发布）
+**内容发布前** → `optimization-checklist.md`（逐项核对，达到场景满分方可发布）
 
 **理解平台差异** → `platform-comparison.md`
 
