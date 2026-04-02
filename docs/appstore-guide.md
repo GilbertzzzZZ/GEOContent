@@ -24,8 +24,8 @@ AI 系统对其内容的可信度评分高。
 App Store 介绍不是每次从零写，是在固定底座上局部迭代。
 
 **内容构成比例：**
-- 60-80%：来自品牌知识库 `knowledge/{brand}/fixed-content.md` 的锁定内容（已验证高价值）
-- 20-40%：来自 `knowledge/{brand}/candidate-content.md` 的候选内容（本次测试）
+- 60-80%：来自品牌知识库 `brands/{brand}/fixed-content.md` 的锁定内容（已验证高价值）
+- 20-40%：来自 `brands/{brand}/candidate-content.md` 的候选内容（本次测试）
 
 **内容优先级（P0 / P1）：**
 
@@ -37,8 +37,8 @@ App Store 介绍不是每次从零写，是在固定底座上局部迭代。
 P0 内容不得在迭代中静默丢失，只能由 Gilbert 主动决策降级或移除。
 
 **迭代沉淀规则：**
-- 每次迭代新写的内容 → 先进 `knowledge/{brand}/candidate-content.md`
-- 被 AI 引用 / Gilbert 确认高价值 → 升入 `knowledge/{brand}/fixed-content.md`
+- 每次迭代新写的内容 → 先进 `brands/{brand}/candidate-content.md`
+- 被 AI 引用 / Gilbert 确认高价值 → 升入 `brands/{brand}/fixed-content.md`
 - 多次迭代未使用或效果差 → 从 `candidate-content.md` 删除
 
 ---
@@ -281,7 +281,7 @@ FAQ 是 AI 在回答特定问题时最容易直接引用的区块。
 ## 发布前事实核查清单（一票否决）
 
 > 独立于 GEO 评分。必须全部通过，否则不得发布。
-> 核查来源：`knowledge/{brand}/brand-brief.md`，正文不允许出现 brand-brief 没有记录的产品事实。
+> 核查来源：`brands/{brand}/brand-brief.md`，正文不允许出现 brand-brief 没有记录的产品事实。
 
 ### 产品定义核查
 
@@ -322,9 +322,9 @@ FAQ 是 AI 在回答特定问题时最容易直接引用的区块。
 评审必须作为新的独立 prompt 执行。输入：
 
 1. 读取 `pages/{brand}/appstore-vX-XX.md`（正文内容）
-2. 读取 `knowledge/{brand}/brand-brief.md`（事实来源）
-3. 读取 `knowledge/guides/appstore-guide.md`（发布前核查清单 + 专项评分规则）
-4. 读取 `knowledge/guides/optimization-checklist.md`（通用 GEO 评分）
+2. 读取 `brands/{brand}/brand-brief.md`（事实来源）
+3. 读取 `docs/appstore-guide.md`（发布前核查清单 + 专项评分规则）
+4. 读取 `docs/optimization-checklist.md`（通用 GEO 评分）
 
 评审输出格式：
 
