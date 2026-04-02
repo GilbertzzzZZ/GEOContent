@@ -1,4 +1,4 @@
-# GEO Guides 导航
+# GEO Docs 导航
 
 内容生产的方法论知识库。所有文档都是「通用」类型，适用于所有品牌。
 
@@ -7,7 +7,7 @@
 ## 文档体系
 
 ```
-guides/
+docs/
 ├── README.md                  ← 本文件，导航入口
 │
 ├── content-playbook.md        ← 核心参考，GEO 完整方法论
@@ -16,7 +16,7 @@ guides/
 ├── optimization-checklist.md  ← 发布前逐项核对，评分制
 │
 ├── appstore-guide.md          ← App Store 场景专项指南
-│                                （4000字符限制、纯文本格式约束）
+│                                （4000字符限制、纯文本格式约束、两步骤评审流程）
 │
 ├── writing-template.md        ← 通用网页/博客场景写作模板（带注释）
 │
@@ -41,25 +41,6 @@ guides/
 **理解平台差异** → `platform-comparison.md`
 
 **避开常见坑** → `failure-modes.md`
-
----
-
-## 文档引用关系
-
-```
-content-playbook.md
-  └── 引用 optimization-checklist.md（发布前检查）
-  └── 引用 platform-comparison.md（Part 3 详细展开）
-
-appstore-guide.md
-  └── 引用 optimization-checklist.md（评分标准，满分 92）
-  └── 独立于 writing-template.md（App Store 格式限制完全不同）
-
-failure-modes.md
-  └── 引用 content-playbook.md（写法原则）
-  └── 引用 platform-comparison.md（平台差异）
-  └── 引用 optimization-checklist.md（发布前检查）
-```
 
 ---
 
