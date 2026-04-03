@@ -122,14 +122,17 @@ App Store 不渲染 Markdown，但 LLM 拿到原始文本后能正确解析 Mark
 
 人类阅读体验：标题显示为 `## 文字`，加粗显示为 `**文字**`，可接受。
 
-### Fallback 版（备用，人机兼容）
+### Fallback 版（App Store 实际发布版）
 
-只去掉在 App Store 纯文本中会造成视觉冲突的符号，其余全保留：
+经验证，App Store 使用 Fallback 版发布（已于 2026-04-03 确认）。
+Markdown 版用于定稿和版本管理，Fallback 版用于实际提交 App Store。
+
+转换规则：只去掉在 App Store 纯文本中会造成视觉冲突的符号，其余全保留：
 
 - **去掉**：`**加粗**` 符号（App Store 纯文本显示为裸星号，视觉冲突）
 - **保留**：`##` 标题、`---` 分隔线、`- 列表`、`Q：/A：` 格式
 
-人类阅读体验：干净，无裸露符号。AI 语义略弱于 Markdown 版（少了加粗强调信号）。
+工作流程：先出 Markdown 版定稿 → 评审通过 → 转换为 Fallback 版 → 提交 App Store。
 
 ---
 

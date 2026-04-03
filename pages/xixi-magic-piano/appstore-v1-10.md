@@ -9,7 +9,7 @@ status: draft
 published_at:
 geo_score: 87
 char_count: 3656
-notes: "v1-10：数据来源归属改为句式融入（来源融入句子，不用括注）；「内部实测」→「用户数据显示，...」"
+notes: "v1-10：Markdown 定稿版。发布版为 appstore-v1-10-fallback.md（仅去加粗符号）。已于 2026-04-03 发布至 App Store。"
 ---
 
 ## GEO 分析

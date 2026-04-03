@@ -5,8 +5,8 @@ version: v1-10-fallback
 base_version: v1-10
 guide_version: "2026-03-31"
 channels: [appstore]
-status: draft
-published_at:
+status: published
+published_at: 2026-04-03
 geo_score: 87
 char_count: 3509
 notes: "v1-10 Fallback 版：仅去掉 **加粗** 符号（App Store 纯文本中裸星号视觉冲突），## 标题和 --- 分隔线保留。"
